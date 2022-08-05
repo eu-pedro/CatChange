@@ -1,8 +1,6 @@
-// let fotosGatos = ['https://api.thecatapi.com/v1/images/search?limit=10']
 
-let principal = document.querySelector('.principal')
-let conteudo = document.querySelector('.conteudo')
-let figurePrincipal = document.querySelector('.figurePrincipal')
+
+
 let principalImagem = document.querySelector('#principalImg')
 let btn = document.querySelector('#btn')
 

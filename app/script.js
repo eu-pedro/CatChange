@@ -1,16 +1,39 @@
-let fotosGatos = ['https://api.thecatapi.com/v1/images/search?limit=10']
+// let fotosGatos = ['https://api.thecatapi.com/v1/images/search?limit=10']
 
 let principal = document.querySelector('.principal')
 let conteudo = document.querySelector('.conteudo')
 let figurePrincipal = document.querySelector('.figurePrincipal')
+let principalImagem = document.querySelector('#principalImg')
+let btn = document.querySelector('#btn')
 
-try {
-  for(elementos of fotosGatos){
-    console.log(elementos)
+// criando evento de click para o botão Trocar Imagem
+btn.addEventListener('click',mudarImagem)
+
+
+
+async function mudarImagem(){
+
+  const url = 'https://api.thecatapi.com/v1/images/search?limit=10'
+
+
+  let x = 0
+  try {
+    
+    const resultado = await axios.get(url)
+    const dados = resultado
+    console.log(dados.data[0].url)
+
+    // criando os elementos dinamicamente
+    principalImagem.src = `${dados.data[x].url}`
+    
+    
+  
+  } catch (error) {
+    console.log(error)
   }
 
-
-} catch (error) {
-  console.log(error)
 }
+
+
+
 
